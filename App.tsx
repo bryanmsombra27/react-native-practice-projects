@@ -6,22 +6,15 @@
  */
 
 import React from 'react';
-import {StatusBar, Text, useColorScheme, View} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {StatusBar, View} from 'react-native';
+import CalculatorScreen from './src/presentation/screens/CalculatorScreen';
+import {styles} from './src/config/theme/appTheme';
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <View style={backgroundStyle}>
+    <View style={styles.background}>
       <StatusBar barStyle={'light-content'} backgroundColor={'black'} />
-      <View>
-        <Text>Template App</Text>
-      </View>
+      <CalculatorScreen />
     </View>
   );
 }
